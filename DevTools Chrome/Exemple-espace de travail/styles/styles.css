@@ -56,7 +56,7 @@ main a{
     align-items:center;
 }
 .col-2{
-    float-left;
+    float:left;
     width:50%
 }
 .mxh-150{
