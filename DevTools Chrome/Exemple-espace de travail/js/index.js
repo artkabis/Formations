@@ -31,7 +31,15 @@ const newStructure = `
     </div>
    `;
    $('main').append(newStructure);
-   const interactivDOM = ``
-
+   const interactivDOM = `<div id="interactionZone"><span class="txtButton">Click me</span></div>`;
+   $('main .subMain').append(interactivDOM);
+   
+    $('#interactionZone').on('click',function(me){
+        var targetId = String(me.currentTarget.id)+"";
+        var type = me.type;
+        console.log('type : ',type, 'depuis :',targetId);
+        const msg = "Un "+type+" a été déclanché depuis "+targetId +"!!!"
+        alert(msg);
+    })
 
 })(jQuery);
