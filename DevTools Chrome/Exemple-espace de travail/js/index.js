@@ -1,6 +1,6 @@
 
 (function ($) {
-    console.log("js loaded");
+    console.log("index.js loaded");
 
     const corp = $('body');
     const h1 = $('h1');
@@ -33,6 +33,27 @@ const newStructure = `
    $('main').append(newStructure);
    const interactivDOM = `<div id="interactionZone"><span class="txtButton">Click me</span></div>`;
    $('main .subMain').append(interactivDOM);
+   const popupInfoComponent = `             
+   <form>
+      <div class="containerToken">
+        <label for="token">Entrez votre token : <popup-info img="./images/alt.png" text="Pour accèder au contenu suivant vous devez entrez votre token (possèdant 6 chiffres)"></label>
+        <input type="text" id="token">
+      </div>
+    </form>`;
+    const contentTokenDisabled = `<div id="tokenContent">Vous venez de découvrir le contenu caché en le débloquant via le token inséré depuis le composant tooltip</div>`
+    $('main .container-component').append(popupInfoComponent);
+    $('#token').on('input',function(e){
+        console.log($(this).val())
+        if($(this).val() === '666666'){
+             $('main .containerToken').append(contentTokenDisabled);
+             console.info("Vous venez de trouver le bon token !!!");
+             $('.containerToken #tokenContent').delay(2000).fadeOut(500,function(){$(this).remove()});//Une fois le composant affiché, nous attendons 2 secondes avant de le faire disparaitre (en 500 ms) et le supprimons du DOM
+        }else{
+            console.info("Le token indiqué n'est pas valide")
+        }
+    });
+
+   $('main .container-component').append('<shadow-component>');
    
     $('#interactionZone').on('click',function(me){
         var targetId = String(me.currentTarget.id)+"";

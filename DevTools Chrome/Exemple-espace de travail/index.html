@@ -15,11 +15,11 @@
         <img src="./images/workspace-sources.PNG">
         <br>
         <br>
-        <p>Avant tout chose, si vous souhaitez accèder au projet de cette formation, vous pouvez le faire <a href="https://github.com/artkabis/Formations/tree/master/DevTools%20Chrome/Exemple-espace%20de%20travail">ici</a> 
-        <br>Une fois déposé, vous avez accès à votre dossier de travail et vous pouvez soit : </p>
+        <p>Avant tout chose, si vous souhaitez accèder au projet de cette formation, vous pouvez le faire <a href="https://github.com/artkabis/Formations/tree/master/DevTools%20Chrome/Exemple-espace%20de%20travail">ici</a>. 
+        Une fois déposé, vous avez accès à votre dossier de travail et vous pouvez soit : </p>
         <ol>
             <li>Ouvrir votre fihcier HTML principal depuis votre dossier physique (disque dur)</li>
-            <li>Utilisé une extension chrome comme <a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb/related">Web Server for Chrome</a>
+            <li>Utiliser une extension chrome comme <a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb/related">Web Server for Chrome</a>
         </ol>
         <div class="container row">
             <div class="col-2"><img class="mxh-150" src="images/lien-physique.PNG"></div>
@@ -27,13 +27,38 @@
         </div>
         <br>
         <p>Nous allons utiliser le second choix afin d'avoir un accès plus intuitif à notre projet.</p>
-        <p>Une fois dans votre prjet, il est tout à fait possible d'éditer vos fichiers JavaScript, CSS et HTML tout en visionnant vos modification depuis le navigateur. Vous devrez simplement sauvegarder vos fichier et actualiser.
+        <p>Une fois dans votre projet, il est tout à fait possible d'éditer vos fichiers JavaScript, CSS et HTML tout en visionnant vos modifications depuis le navigateur. Vous devrez simplement sauvegarder vos fichiers et actualiser devTools avec F5.
+        
+         <h3>Afin d'ajouter un cadre d'apprentissage, nous allons étudier l'utilisation des shadow DOM components au sein de se cours</h3>
+         <h4>Mais qu'est-ce qu'un shadow DOM Component (ou api Shadow DOM) ?</h4>
+         <cite>Un aspect important des composants web est l'encapsulation — être capable de garder la structure de balisage, le style et le comportement cachés et séparés du reste de code de la page tel que différentes parties n'entrent pas en conflit et que le code puisse rester agréable et propre. L'API Shadow DOM est un moyen d'y parvenir, fournissant une manière d'associer à un élément un DOM séparé et caché. Cet article couvre les bases de l'utilisation du DOM fantôme. </cite>
+         <br>
+         <p>Nous allons créer notre premier Shadow DOM Component, celui-ci restera basique et aura simplment un but pédagogique.<p>
+         <p>Ce composant est construit à partir du fichier ShadowComponent.js et il possède des propriétés bien définis : </p>
+         <ol>
+            <li>Le composant est élément qui étend HTMLElement</li>
+            <li>Il possède bien évidement un constructeur qui lui permettra par la suite de pouvoir l'utiliser via son propre scope, en l'occurence "this._root"</li>
+            <li>Il possède aussi une méthode d'attachement qui prend deux paramètres possible : "this.attachShadow" pouvant être ouvert (open), ce qui lui permettra de créer un pont avec le DOM qui l'accueil en son sein et fermer (closed), qui lui permet d'être isolé du DOM parent.</li>
+            <li>Il a donc la capacité a être isolé et de ne pas subir le comportement (styles CSS et script js) utilisé depuis le DOM parent</li>
+         </ol>
+         <br><br>
+         <p>Notre premier composant est un simple tooltip, il possède son propre modèle composé de : CSS et HTML et Javascript</p>
+         <div class="container-component"></div>
+
+
+
+
+
+
         <h2 class="monH2">Gestion Html, Css et Javascript</h2>
         <div id="code"></div>
-
+    
         <h3> Allons plus loin</h3>
     </main>
     <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/ShadowComponent.js"></script>
+    <script src="./js/PopupInfo.js"></script>
     <script src="./js/index.js"></script>
+
 </body>
 </html>

@@ -9,6 +9,8 @@ main{
     justify-content:center;
     align-items:center;
     flex-direction:column;
+    max-width:90vw;
+    margin: 0 5vw;
 }
 
 main a{
@@ -62,4 +64,14 @@ main a{
 .mxh-150{
     max-height:350px;
     width:auto;
+}
+#tokenContent {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    z-index: 20;
+    background: rgb(0 0 0 / 93%);
+    padding: 50px;
+    transform: translate(-50%,-50%);
 }
