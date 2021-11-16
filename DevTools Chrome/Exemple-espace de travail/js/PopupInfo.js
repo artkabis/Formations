@@ -1,4 +1,3 @@
-
 class PopUpInfo extends HTMLElement {
   constructor() {
         // Toujours appeler super en premier dans le constructeur
